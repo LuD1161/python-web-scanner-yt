@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+import time
 
+start_time = time.time()
 cookies = {
     '_ga_GR4KJ51T5B': 'GS1.1.1651692257.1.0.1651693215.0',
     '_ga': 'GA1.1.327657774.1651692257',
@@ -36,3 +38,6 @@ for line in lines:
         print(f"title : {soup.title.string}\n")
     except Exception as e:
         print(f"Exception in getting header : {e}")
+
+
+print("--- %s seconds ---" % (time.time() - start_time))
